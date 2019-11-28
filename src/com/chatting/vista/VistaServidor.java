@@ -16,7 +16,6 @@ import com.chatting.Constantes;
 
 /**
  * Ventana del servidor.
- * @author Ismael Núñez
  *
  */
 public class VistaServidor extends JPanel {

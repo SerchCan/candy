@@ -13,7 +13,6 @@ import com.chatting.vista.VistaServidor;
 
 /**
  * Hilo del servidor que tratará al cliente.
- * @author Ismael Núñez
  *
  */
 public class HiloServidor extends Thread {
@@ -95,7 +94,7 @@ public class HiloServidor extends Thread {
 			default:
 				
 				Servidor.imprimirTodos(nombre+": "+ mensaje);
-				
+			
 			break;
 		}
 	}
@@ -120,6 +119,8 @@ public class HiloServidor extends Thread {
 		Servidor.meterCliente(this);
 		Servidor.getClientes().actualizarConectados();
 		Servidor.imprimirTodos("<SERVER> "+ nombre + " se ha unido al chat.");
+		Servidor.imprimirTodos("<SERVER> CLIENTES CONECTADOS: " + new String(Servidor.getClientes().getListaClientes()));
+
 	}
 	
 	/**

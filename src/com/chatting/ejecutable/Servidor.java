@@ -16,7 +16,6 @@ import com.chatting.vista.VistaServidor;
 
 /**
  * Clase principal para el servidor del chat.
- * @author Ismael Núñez
  *
  */
 public class Servidor {
@@ -59,7 +58,7 @@ public class Servidor {
 		imprimirConsola(msg);
 		clientes.emitirATodos(msg);
 	}
-	
+
 	public static ListaClientes getClientes() {
 		return clientes;
 	}

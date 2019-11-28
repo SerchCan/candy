@@ -11,7 +11,6 @@ import java.util.Set;
 /**
  * Clase que almacena los clientes que están conectados.
  * He elegido HashMap para almacenar el nick como clave de los clientes.
- * @author Ismael Núñez
  *
  */
 public class ListaClientes {
@@ -91,6 +90,14 @@ public class ListaClientes {
 		Set<Map.Entry<String, HiloServidor>> set = mapaClientes.entrySet();
 		for (@SuppressWarnings("rawtypes") Entry entry : set) {
 		   ((HiloServidor) entry.getValue()).enviarTCP(msg);
+		}
+	}
+	public void emitirA(String msg, String username) {
+		Set<Map.Entry<String, HiloServidor>> set = mapaClientes.entrySet();
+		for (@SuppressWarnings("rawtypes") Entry entry : set) {
+				if (entry.getKey() == username){
+					((HiloServidor) entry.getValue()).enviarTCP(msg);
+				}
 		}
 	}
 }

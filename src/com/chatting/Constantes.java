@@ -2,7 +2,6 @@ package com.chatting;
 
 /**
  * Algunas constantes usadas en el proyecto, como códigos de comunicación.
- * @author Ismael
  *
  */
 public abstract class Constantes {

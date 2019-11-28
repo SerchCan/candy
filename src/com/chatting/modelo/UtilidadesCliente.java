@@ -12,7 +12,6 @@ import com.chatting.vista.VistaCliente;
 
 /**
  * Clase que provee de las herramientas para manipular datos con el cliente.
- * @author Ismael Núñez
  *
  */
 public class UtilidadesCliente {

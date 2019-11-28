@@ -15,7 +15,6 @@ import com.chatting.vista.VistaCliente;
 
 /**
  *  Clase principal del usuario cliente de chat.
- * @author Ismael Núñez
  *
  */
 public class Cliente {

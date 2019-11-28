@@ -9,7 +9,6 @@ import com.chatting.vista.VistaCliente;
 
 /**
  * Clase que tratará los eventos sobre los botones en la vista.
- * @author Ismael Núñez
  *
  */
 public class ControladorCliente implements ActionListener {
