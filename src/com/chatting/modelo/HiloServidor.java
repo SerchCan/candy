@@ -92,8 +92,12 @@ public class HiloServidor extends Thread {
 				
 			break;
 			default:
-				
-				Servidor.imprimirTodos(nombre+": "+ mensaje);
+				String[] parts= mensaje.split(" ",3);
+				if (parts[0].contains("/PRIVATE")) {
+					Servidor.imprimirA(nombre+": "+parts[2],parts[1]);
+				} else{
+					Servidor.imprimirTodos(nombre+": "+ mensaje);
+				}
 			
 			break;
 		}

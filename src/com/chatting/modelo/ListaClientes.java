@@ -95,7 +95,7 @@ public class ListaClientes {
 	public void emitirA(String msg, String username) {
 		Set<Map.Entry<String, HiloServidor>> set = mapaClientes.entrySet();
 		for (@SuppressWarnings("rawtypes") Entry entry : set) {
-				if (entry.getKey() == username){
+				if (entry.getKey().equals(username)){
 					((HiloServidor) entry.getValue()).enviarTCP(msg);
 				}
 		}

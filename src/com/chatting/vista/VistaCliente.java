@@ -159,7 +159,7 @@ public class VistaCliente extends JPanel {
 		botonLimpiar.addActionListener(l);
 		botonListado.addActionListener(l);
 		botonScroll.addActionListener(l);
-		
+
 		// Controlador de cierre de ventana (para que se desconecte bien al cerrar)
 		exitListener = new WindowAdapter() {
 

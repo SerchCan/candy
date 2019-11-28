@@ -58,6 +58,10 @@ public class Servidor {
 		imprimirConsola(msg);
 		clientes.emitirATodos(msg);
 	}
+	public static void imprimirA(String msg, String username){
+		imprimirConsola(msg);
+		clientes.emitirA(msg, username);
+	}
 
 	public static ListaClientes getClientes() {
 		return clientes;
