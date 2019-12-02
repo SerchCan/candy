@@ -34,8 +34,12 @@ public class ControladorCliente implements ActionListener {
 				salir();
 			break;
 			case "enviar":
-				cliente.enviarTCP(vista.getTextoCampo());
-				vista.vaciarTextoCampo();
+			cliente.enviarTCP(vista.getTextoCampo());
+			Boolean temp = vista.isPrivateChat; // initial state for private
+			vista.isPrivateChat = false; // set off to get normal message
+			vista.appendChat(vista.getTextoCampo());
+			vista.isPrivateChat = temp; // set the current state again
+			vista.vaciarTextoCampo();
 			break;
 			case "listado":
 				cliente.enviarTCP(Constantes.CODIGO_LISTAR);
