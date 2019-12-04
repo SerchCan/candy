@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.IOException;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -20,7 +21,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 import javax.swing.text.DefaultCaret;
 
 import com.chatting.controlador.ControladorCliente;
@@ -32,7 +32,7 @@ import com.chatting.controlador.ControladorCliente;
 public class VistaCliente extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private final JFrame ventana;
 	WindowListener exitListener;
 
@@ -98,14 +98,16 @@ public class VistaCliente extends JPanel {
 	/* ============================| Métodos |============================ */
 
 	public String getTextoCampo() {
-		if (!isPrivateChat){
+		if (!isPrivateChat) {
 			return campo.getText().toString();
 		}
 		return "/PRIVATE" + chatReceiver + " " + campo.getText().toString();
 	}
-	public void appendChat(String msg){
+
+	public void appendChat(String msg) {
 		chat.append(msg + "\n");
 	}
+
 	public void vaciarTextoCampo() {
 		campo.setText("");
 	}
@@ -170,7 +172,7 @@ public class VistaCliente extends JPanel {
 			@Override
 			public void mouseClicked(final MouseEvent e) {
 				isPrivateChat = isPrivateChat ? false : true; // inverse
-				if(isPrivateChat){
+				if (isPrivateChat) {
 					final String s = (String) listaUsuarios.getSelectedValue();
 					chatReceiver = s;
 					JOptionPane.showMessageDialog(null, "Se inicio un chat privado con" + s);
@@ -186,7 +188,12 @@ public class VistaCliente extends JPanel {
 
 			@Override
 			public void windowClosing(final WindowEvent e) {
-		        l.salir();
+				try {
+					l.salir();
+				} catch (ClassNotFoundException | IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 		        System.exit(0);
 		    }
 		};
